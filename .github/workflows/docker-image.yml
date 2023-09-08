@@ -55,3 +55,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: div-jar
+
+  run-another-workflow:
+    uses: qliktesting/docker-k8s/.github/workflows/hello-world.yaml@master
