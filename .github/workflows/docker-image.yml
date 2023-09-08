@@ -57,4 +57,5 @@ jobs:
           name: div-jar
 
   run-another-workflow:
+    needs: [build-and-test,download-jar]
     uses: qliktesting/docker-k8s/.github/workflows/hello-world.yaml@master
