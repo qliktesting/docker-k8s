@@ -18,3 +18,6 @@ jobs:
       with:
         distribution: 'temurin' # See 'Supported distributions' for available options
         java-version: '17'
+
+    - name: build using maven
+      run: mvn clean install
