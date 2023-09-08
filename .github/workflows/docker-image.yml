@@ -30,4 +30,4 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build docker image
-      run: docker build -t qualitydiv/java-app
+      run: docker build -t qualitydiv/java-app .
