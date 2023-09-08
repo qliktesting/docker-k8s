@@ -1,5 +1,4 @@
-name: Hello World
-
+name: Conditional
 on:
   push:
     branches: [master]
@@ -20,5 +19,10 @@ jobs:
       - name: conditional dispatch
         if: github.event_name == 'workflow_dispatch'
         run: echo "It's  from a WF dispatch"
-      
+      - name: Success
+        if: success()
+        run: echo "Congrats!!!"
+      - name: failure
+        if: failure()
+        run: echo "Oops!!!"
         
