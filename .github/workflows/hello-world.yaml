@@ -1,0 +1,14 @@
+name: Hello World
+
+on:
+  workflow_run:
+    workflows: ["Maven Build and Test"]
+    types: 
+      - completed
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hellow-world
+        run: echo "hello-world"
