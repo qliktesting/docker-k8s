@@ -19,6 +19,8 @@ jobs:
       - name: conditional dispatch
         if: github.event_name == 'workflow_dispatch'
         run: echo "It's  from a WF dispatch"
+      - name: Introduce failure
+        run: exit 1
       - name: Success
         if: success()
         run: echo "Congrats!!!"
