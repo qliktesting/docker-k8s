@@ -1,0 +1,24 @@
+name: Hello World
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: conditional PR execution
+        if: github.event_name == 'pull_request'
+        run: echo "It's a PR"
+      - name: conditional Push execution
+        if: github.event_name == 'push'
+        run: echo "It's a push"
+      - name: conditional dispatch
+        if: github.event_name == 'workflow_dispatch'
+        run: echo "It's  from a WF dispatch"
+      
+        
