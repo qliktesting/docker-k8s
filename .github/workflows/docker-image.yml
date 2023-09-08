@@ -40,3 +40,18 @@ jobs:
 
     - name: push image to dockerhub
       run: docker push ${{ secrets.DOCKERHUB_USER }}/java-app
+
+    - name: upload jar file
+      uses: actions/upload-artifact@v3
+      with:
+        name: div-jar
+        path: ./target/HelloWorld-0.0.1-SNAPSHOT-classes.jar
+
+  download-jar:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: download jar file
+        uses: actions/download-artifact@v3
+        with:
+          name: div-jar
