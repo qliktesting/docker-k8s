@@ -13,3 +13,8 @@ jobs:
     steps:
       - name: Print hellow-world
         run: echo "hello-world"
+        
+      - name: download jar file
+        uses: actions/download-artifact@v3
+        with:
+          name: div-jar
